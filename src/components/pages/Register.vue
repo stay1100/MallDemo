@@ -32,7 +32,6 @@
 <script>
 import axios from 'axios'
 import url from '@/serviceAPI.config.js'
-import {Toast} from 'vant'
 export default {
   name: 'Register',
   data () {
@@ -83,16 +82,16 @@ export default {
       .then(response => {
         console.log(response)
         if (response.data.code === 200) {
-          Toast.success(response.data.message)
+          this.$toast.success(response.data.message)
           this.$router.push('/')
         } else {
-          Toast.fail(response.data.message)
+          this.$toast.fail(response.data.message)
           this.openLoading=false
         }
         console.log(response.data.code)
       })
       .catch(error => {
-        Toast.fail('注册失败')
+        this.$toast.fail('注册失败')
         this.openLoading=false
       })
     }

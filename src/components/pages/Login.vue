@@ -32,7 +32,6 @@
 <script>
 import axios from 'axios'
 import url from '@/serviceAPI.config.js'
-import {Toast} from 'vant'
 export default {
   name: 'Login',
   data () {
@@ -89,23 +88,23 @@ export default {
             setTimeout(resolve,500)
           })
           .then(() => {
-            Toast.success('登录成功')
+            this.$toast.success('登录成功')
             this.$router.push('/')
           })
           .catch(error => {
-            Toast.fail("登录状态保存失败")
+            this.$toast.fail("登录状态保存失败")
             console.log(error)
           })
           
         } else {
-          Toast.fail('登录失败')
+          this.$toast.fail('登录失败')
           this.openLoading=false
         }
         console.log(response)
       })
       .catch(error => {
         console.log(error)
-        Toast.fail('登录失败')
+        this.$toast.fail('登录失败')
         this.openLoading=false
       })
     }
@@ -113,7 +112,7 @@ export default {
   created () {
     // 根据保存的登录状态，判断是否已经登录
     if (localStorage.userInfo) {
-      Toast.success('您已经登录')
+      this.$toast.success('您已经登录')
       this.$router.push('/')
     }
   }

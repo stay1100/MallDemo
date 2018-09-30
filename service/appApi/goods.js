@@ -1,3 +1,7 @@
+/**
+ * 增加关于商品信息的各种路由接口
+ */
+
 const Router = require('koa-router')
 const mongoose = require('mongoose')
 const fs = require('fs')
@@ -60,6 +64,63 @@ router.get('/insertAllCategorySub', async ctx => {
       })
     })
   })
+})
+
+// 获取商品详情信息
+router.post('/getDetailGoodsInfo', async ctx => {
+  let goodsId = ctx.request.body.goodsId
+  const Goods = mongoose.model('Goods')
+  await Goods.findOne({ID: goodsId}).exec()
+  .then(result => {
+    ctx.body = {code:200, message: result}
+  })
+  .catch(error => {
+    console.log(error)
+    ctx.body = {code:500, message:error}
+  })
+})
+
+// 获取商品分类信息
+router.get('/getCategoryList',async ctx => {
+  try{
+    const Category = mongoose.model('Category')
+    let result = await Category.find().exec()
+    ctx.body={code:200,message:result}
+  } catch(err) {
+    ctx.body={code:500,message:err}
+  }
+})
+
+// 获取商品子类信息
+router.post('/getCategorySubList',async(ctx)=>{
+  try{
+    let categoryId = ctx.request.body.categoryId
+    const CategorySub = mongoose.model('CategorySub')
+    let result = await CategorySub.find({MALL_CATEGORY_ID:categoryId}).exec()
+    ctx.body={code:200,message:result}
+  }catch(err){
+    ctx.body={code:500,message:err}
+  }
+})
+
+// 根据商品类别获取商品列表
+router.post('/getGoodsListByCategorySubID',async(ctx)=>{
+  try{
+    // let categorySubId = "2c9f6c94621970a801626a3770620177"
+    // let page = 2;
+    let categorySubId = ctx.request.body.categorySubId
+    // 添加分页功能，这样传回前台的数据就能直接分页显示
+    let page = ctx.request.body.page
+    let num = 10 //每页显示数量
+    let start = (page-1)*num
+
+    const Goods = mongoose.model('Goods')
+    // 分页后添加.skip(start) .limit(num)
+    let result = await Goods.find({SUB_ID:categorySubId}).skip(start).limit(num).exec()
+    ctx.body={code:200,message:result}
+  }catch(err){
+    ctx.body={code:500,message:err}
+  }
 })
 
 module.exports = router
