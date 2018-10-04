@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {Button, Row, Col, Swipe, SwipeItem, Lazyload, List, Field, NavBar, Toast, Tabs, Tab, PullRefresh} from 'vant'
+import {Button, Row, Col, Swipe, SwipeItem, Lazyload, List, Field, NavBar, Toast, Tabs, Tab, PullRefresh, Stepper, Tabbar, TabbarItem, CellGroup, Cell} from 'vant'
 import '@/assets/style/reset.css'
 
 Vue.config.productionTip = false
@@ -20,6 +20,11 @@ Vue.use(Button)
    .use(Tabs)
    .use(Tab)
    .use(PullRefresh)
+   .use(Stepper)
+   .use(Tabbar)
+   .use(TabbarItem)
+   .use(CellGroup)
+   .use(Cell)
 
 /* eslint-disable no-new */
 new Vue({

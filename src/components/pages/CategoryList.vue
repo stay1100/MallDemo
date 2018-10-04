@@ -83,6 +83,8 @@ export default {
     document.getElementById("leftNav").style.height=winHeight -46-50 +'px'
     // 设置list高度
     document.getElementById("list-div").style.height=winHeight -90-50 +'px'
+    // 减去50px，显示出底部导航栏
+    document.getElementById('list-div').style.height=winHeight-90-50 +'px'
   },
   methods: {
     getCategory() {
@@ -182,7 +184,7 @@ export default {
     },
     //跳转到商品详细页
     goGoodsInfo(id){
-      this.$router.push({name:'Goods',params:{goodsId:id}})
+      this.$router.push({name:'Goods', params:{goodsId:id}})
     }
   }
 }
