@@ -3,7 +3,8 @@
  * 接口配置文件
  */
 const BASEURL = "https://www.easy-mock.com/mock/5ae2eeb23fbbf24d8cd7f0b6/SmileVue/"
-const LOCALURL = "http://localhost:3000/"
+// const LOCALURL = "http://80.240.30.22:3000/"
+const LOCALURL = "http://80.240.30.22:3000/"
 const URL = {
     getShoppingMallInfo: BASEURL + 'index',    // 商城首页接口
     registerUser: LOCALURL + 'user/register',   //用户注册接口
@@ -13,5 +14,5 @@ const URL = {
     getCateGorySubList : LOCALURL+'goods/getCategorySubList',  //得到小类信息
     getGoodsListByCategorySubID : LOCALURL+'goods/getGoodsListByCategorySubID',  //得到小类商品信息
 }
- 
+
 export default URL

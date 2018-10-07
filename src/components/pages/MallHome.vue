@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--search bar area-->
-    <van-row class="search-bar">
+<!--     <van-row class="search-bar">
       <van-col span="3">
         <img class="location-icon" :src="locationIcon">
       </van-col>
@@ -11,7 +11,7 @@
       <van-col span="5">
         <van-button size="mini">查找</van-button>
       </van-col>
-    </van-row>
+    </van-row> -->
     <!-- swiper area -->
     <div class="swiper">
       <van-swipe :autoplay="3000">
@@ -158,38 +158,39 @@ export default {
 
 <style lang="less" scoped>
 /* search bar area */
-.search-bar{
-  height: 2.2rem;
-  line-height:2.2rem;
-  background-color: #e5017d;
-  overflow: hidden;
-  .location-icon{
-    width: 50%;
-    padding-top: .5rem;
-    padding-left: .3rem;
-  }
-  .header-search {
-    border-bottom: 1px solid #fff;
-    width: 90%;
-    height: 1.3rem;
-    font-size: .875rem;
-    background-color: #e5017d;
-    color: #fff;
-  }
-  /* 改变input中placeholder的默认颜色 */
-  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #ccc;;
-  }
-  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #ccc;;
-  }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #ccc;;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #ccc;
-  }
-}
+
+// .search-bar{
+//   height: 2.2rem;
+//   line-height:2.2rem;
+//   background-color: #e5017d;
+//   overflow: hidden;
+//   .location-icon{
+//     width: 50%;
+//     padding-top: .5rem;
+//     padding-left: .3rem;
+//   }
+//   .header-search {
+//     border-bottom: 1px solid #fff;
+//     width: 90%;
+//     height: 1.3rem;
+//     font-size: .875rem;
+//     background-color: #e5017d;
+//     color: #fff;
+//   }
+//   /* 改变input中placeholder的默认颜色 */
+//   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+//     color: #ccc;;
+//   }
+//   :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//     color: #ccc;;
+//   }
+//   ::-moz-placeholder { /* Mozilla Firefox 19+ */
+//     color: #ccc;;
+//   }
+//   :-ms-input-placeholder { /* Internet Explorer 10-11 */
+//     color: #ccc;
+//   }
+// }
 /* swiper area */
 .swiper {
   clear: both;

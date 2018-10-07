@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 // 数据库路径
 // localhost后面跟的是数据库名称，这是固定写法。这里因为是使用了默认端口27017，所以不需要重写端口号
 const db = "mongodb://localhost/mall-db"
+// const db = "mongodb://xk:123456@$80.240.30.22:27017/mall?authSource=admin"
 // node的glob模块，使用glob规则可以获取匹配对应规则文件。
 const glob = require('glob')
 // resolve用于将一系列路径或路径段解析为绝对路径

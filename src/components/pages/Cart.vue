@@ -18,7 +18,7 @@
         </div>
         <div class="pang-goods-price">
           <div>
-            ￥{{item.price |moneyFilter}}
+            ￥{{item.price | moneyFilter}}
           </div>
           <div>
               x{{item.count}}
@@ -51,35 +51,36 @@ export default {
   methods: {
     // getCartInfo用于得到购物车页面的初始数据
     getCartInfo () {
+      let cartStorage = localStorage.getItem('cartInfo')
       //判断localStorage里是否有购物车数据
-      if(localStorage.cartInfo){
+      if(cartStorage){
         //如果有数据，我们取出并赋值给cartInfo
-        this.cartInfo = JSON.parse(localStorage.cartInfo)
+        this.cartInfo = JSON.parse(cartStorage)
       }
       //打印到控制台查看效果
-      console.log(' this.cartInfo:'+JSON.stringify(this.cartInfo))
+      // console.log(' this.cartInfo:'+JSON.stringify(this.cartInfo))
       this.isEmpty = this.cartInfo.length > 0 ? true : false
     },
     clearCart(){
       localStorage.removeItem('cartInfo')
-      this.cartInfo=[]
+      this.cartInfo = []
     }
   },
   filters:{
     moneyFilter(money){
-        return toMoney(money)
+      return toMoney(money)
     }
   },
   computed:{
     totalMoney(){
       let allMoney = 0
       this.cartInfo.forEach((item,index) => {
-         allMoney += item.price*item.count
+        allMoney += item.price*item.count
       });
-      localStorage.cartInfo=JSON.stringify(this.cartInfo)
+      // localStorage.setItem('cartInfo', JSON.stringify(this.cartInfo))
       return allMoney
     }
-  },
+  }
 }
 </script>
 
