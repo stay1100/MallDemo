@@ -4,9 +4,7 @@
 
 整个项目采用前后端分离的开发模式，前端实现了首页商品楼层、商品分类展示、加入购物车、会员注册登录等基本功能，并进行了移动端屏幕适配、平台兼容；后端为前端提供数据接口和数据的查询存储功能。
 
-服务器环境：Linux(CentOS 7) + Nginx + MongoDB + Node
-
-项目线上地址：![http://mall.xksblog.top](http://mall.xksblog.top)
+项目线上地址：[http://mall.xksblog.top](http://mall.xksblog.top) （服务器环境：Linux(CentOS 7) + Nginx + MongoDB + Node）
 
 ## 开发技术栈
 
@@ -41,14 +39,14 @@ npm run dev
 
 #### 商品展示页面
 
-<img src="https://github.com/stay1100/MallDemo/blob/master/screenshots/home.gif" width="365" height="619"/>
+<img src="https://github.com/stay1100/MallDemo/blob/master/screenshots/home.gif" width="320" height="568"/>
 
 
 #### 商品分类页面
 
-<img src="https://github.com/stay1100/MallDemo/blob/master/screenshots/list.gif" width="365" height="619"/>
+<img src="https://github.com/stay1100/MallDemo/blob/master/screenshots/list.gif" width="320" height="568"/>
 
 
 #### 购物车页面
 
-<img src="https://github.com/stay1100/MallDemo/blob/master/screenshots/buy.gif" width="365" height="619"/>
+<img src="https://github.com/stay1100/MallDemo/blob/master/screenshots/buy.gif" width="320" height="568"/>
